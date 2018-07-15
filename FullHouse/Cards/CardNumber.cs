@@ -7,19 +7,18 @@ namespace FullHouse.Cards
 
     public enum CardNumber
     {
-        Ace   = 1 << 1,
-        Two   = 1 << 2,
-        Three = 1 << 3,
-        Four  = 1 << 4,
-        Five  = 1 << 5,
-        Six   = 1 << 6,
-        Seven = 1 << 7,
-        Eight = 1 << 8,
-        Nine  = 1 << 9,
-        Ten   = 1 << 10,
-        Jack  = 1 << 11,
-        Queen = 1 << 12,
-        King  = 1 << 13
-
+        Two   = 1 << 1,
+        Three = 1 << 2,
+        Four  = 1 << 3,
+        Five  = 1 << 4,
+        Six   = 1 << 5,
+        Seven = 1 << 6,
+        Eight = 1 << 7,
+        Nine  = 1 << 8,
+        Ten   = 1 << 9,
+        Jack  = 1 << 10,
+        Queen = 1 << 11,
+        King  = 1 << 12,
+        Ace   = 1 << 13
     }
 }
