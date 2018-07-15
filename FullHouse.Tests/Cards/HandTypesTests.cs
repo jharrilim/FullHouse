@@ -38,7 +38,10 @@ namespace FullHouse.Tests.Cards
 
         private readonly ITestOutputHelper testOutputHelper;
 
-        public HandTypesTests(ITestOutputHelper toh) => testOutputHelper = toh;
+        public HandTypesTests(ITestOutputHelper toh)
+        {
+            testOutputHelper = toh;
+        }
 
         [Fact]
         public void IsRoyalFlush_ShouldMatch()
@@ -59,8 +62,16 @@ namespace FullHouse.Tests.Cards
 
         [Theory]
         [MemberData(nameof(MixedSuitsData))]
+        public void IsRoyalFlush_WithNonMatchingSuits_ShouldReturnFalse(List<Card> cards)
+        {
+            Hand hand = new Hand();
+            hand.Cards.AddRange(cards);
+            Assert.False(hand.IsRoyalFlush());
+        }
+
+        [Theory]
         [MemberData(nameof(MixedNumberData))]
-        public void IsRoyalFlush_ShouldNotMatch(List<Card> cards)
+        public void IsRoyalFlush_WithWrongNumbers_ShouldReturnFalse(List<Card> cards)
         {
             Hand hand = new Hand();
             hand.Cards.AddRange(cards);

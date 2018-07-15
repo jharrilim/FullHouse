@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{99560CD0-295
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DFA7EA25-197D-4827-AE1B-9E188D0A96BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullHouse.Tests", "LibTests\FullHouse.Tests.csproj", "{45CA4F4E-7E16-4B74-9A1C-584242507925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullHouse.Tests", "FullHouse.Tests\FullHouse.Tests.csproj", "{45CA4F4E-7E16-4B74-9A1C-584242507925}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullHouse", "FullHouse\FullHouse.csproj", "{4C37D7EC-2F18-4656-9797-8436591B2004}"
 EndProject
