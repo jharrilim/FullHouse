@@ -5,15 +5,11 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{99560CD0-295C-4EF3-AA3D-B12065C43D9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Lib\Cards.csproj", "{B6D5B346-B691-49C4-8F7E-900309E6D73A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DFA7EA25-197D-4827-AE1B-9E188D0A96BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTests", "LibTests\LibTests.csproj", "{45CA4F4E-7E16-4B74-9A1C-584242507925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullHouse.Tests", "LibTests\FullHouse.Tests.csproj", "{45CA4F4E-7E16-4B74-9A1C-584242507925}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csproj", "{06A36302-592E-4CB1-89C0-7BAACEF7710F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullHouse", "FullHouse\FullHouse.csproj", "{4C37D7EC-2F18-4656-9797-8436591B2004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullHouse", "FullHouse\FullHouse.csproj", "{4C37D7EC-2F18-4656-9797-8436591B2004}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B6D5B346-B691-49C4-8F7E-900309E6D73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6D5B346-B691-49C4-8F7E-900309E6D73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6D5B346-B691-49C4-8F7E-900309E6D73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6D5B346-B691-49C4-8F7E-900309E6D73A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45CA4F4E-7E16-4B74-9A1C-584242507925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45CA4F4E-7E16-4B74-9A1C-584242507925}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45CA4F4E-7E16-4B74-9A1C-584242507925}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45CA4F4E-7E16-4B74-9A1C-584242507925}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06A36302-592E-4CB1-89C0-7BAACEF7710F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06A36302-592E-4CB1-89C0-7BAACEF7710F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06A36302-592E-4CB1-89C0-7BAACEF7710F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06A36302-592E-4CB1-89C0-7BAACEF7710F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C37D7EC-2F18-4656-9797-8436591B2004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C37D7EC-2F18-4656-9797-8436591B2004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C37D7EC-2F18-4656-9797-8436591B2004}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,9 +30,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B6D5B346-B691-49C4-8F7E-900309E6D73A} = {99560CD0-295C-4EF3-AA3D-B12065C43D9B}
 		{45CA4F4E-7E16-4B74-9A1C-584242507925} = {DFA7EA25-197D-4827-AE1B-9E188D0A96BE}
-		{06A36302-592E-4CB1-89C0-7BAACEF7710F} = {99560CD0-295C-4EF3-AA3D-B12065C43D9B}
 		{4C37D7EC-2F18-4656-9797-8436591B2004} = {99560CD0-295C-4EF3-AA3D-B12065C43D9B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

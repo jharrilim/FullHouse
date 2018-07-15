@@ -57,17 +57,11 @@ namespace FullHouse
 #endif
                 cardsOnTable.Add(player.Hand.Play(e.Card));
             }
-            throw new NotImplementedException();
         }
 
         public void DealCard(Card card)
         {
             throw new NotImplementedException();
-        }
-
-        public void PlayCardHandler()
-        {
-
         }
 
         public void LeaveTable(Player player)
@@ -76,6 +70,5 @@ namespace FullHouse
             players.TryRemove(player, out _);
         }
 
-        
     }
 }

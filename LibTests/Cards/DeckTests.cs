@@ -6,16 +6,13 @@ using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace LibTests
+namespace FullHouse.Tests.Cards
 {
     public class DeckTests
     {
         private readonly ITestOutputHelper testOutputHelper;
 
-        public DeckTests(ITestOutputHelper testOutputHelper)
-        {
-            this.testOutputHelper = testOutputHelper;
-        }
+        public DeckTests(ITestOutputHelper toh) => testOutputHelper = toh;
 
         [Fact]
         public void Shuffle_ShouldGenerateRandom()

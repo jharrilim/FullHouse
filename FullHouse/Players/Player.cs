@@ -20,6 +20,7 @@ namespace FullHouse.Players
         public event EventHandler RequestDraw;
         public event EventHandler EndTurn;
         public event EventHandler<CardPlayedEventArgs> CardPlayed;
+
         public Player(string name)
         {
             Name = name;
