@@ -26,7 +26,7 @@ namespace FullHouse.Cards
 
         public static bool IsRoyalFlush(this Hand hand)
         {
-            if (hand.Cards.Count <= 0)
+            if (hand.Count <= 0)
                 return false;
 
             return IsFlush(hand) &&
@@ -77,6 +77,21 @@ namespace FullHouse.Cards
             }
 
             return count == 5;
+        }
+
+        public static bool IsFourOfAKind(this Hand hand)
+        {
+            var counts = from c in hand.Cards
+                    group c by c.Value into grp
+                    select grp.Count();
+
+            foreach (var count in counts)
+            {
+                if (count >= 4)
+                    return true;
+            }
+
+            return false;
         }
     }
 }

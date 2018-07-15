@@ -71,6 +71,19 @@ namespace FullHouse.Tests.Cards
             }
         };
 
+        public static readonly TheoryData<List<Card>> FourOfAKind = new TheoryData<List<Card>>
+        {
+            new List<Card>
+            {
+                new Card(Suit.Clubs, CardNumber.Two),
+                new Card(Suit.Diamonds, CardNumber.Two),
+                new Card(Suit.Clubs, CardNumber.Four),
+                new Card(Suit.Spades, CardNumber.Two),
+                new Card(Suit.Hearts, CardNumber.Two),
+                new Card(Suit.Hearts, CardNumber.King)
+            }
+        };
+
         [Theory]
         [MemberData(nameof(RoyalFlush))]
         public void IsRoyalFlush_WithRoyalFlush_ShouldMatch(List<Card> cards)
@@ -157,6 +170,26 @@ namespace FullHouse.Tests.Cards
             Hand hand = new Hand();
             hand.Cards.AddRange(cards);
             Assert.False(hand.IsFlush());
+        }
+
+        [Theory]
+        [MemberData(nameof(FourOfAKind))]
+        public void IsFourOfAKind_WithFourOfAKind_ShouldReturnTrue(List<Card> cards)
+        {
+            Hand hand = new Hand();
+            hand.Cards.AddRange(cards);
+            Assert.True(hand.IsFourOfAKind());
+        }
+
+        [Theory]
+        [MemberData(nameof(MixedSuitsRoyalStraight))]
+        [MemberData(nameof(MixedSuitsStraight))]
+        [MemberData(nameof(RoyalFlush))]
+        public void IsFourOfAKind_WithNonFourOfAKindData_ShouldReturnFalse(List<Card> cards)
+        {
+            Hand hand = new Hand();
+            hand.Cards.AddRange(cards);
+            Assert.False(hand.IsFourOfAKind());
         }
     }
 }
