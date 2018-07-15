@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
+using System.Diagnostics;
 
 namespace FullHouse.Cards
 {
@@ -37,25 +38,18 @@ namespace FullHouse.Cards
 
         public static bool IsFlush(this Hand hand)
         {
-            Suit suit = hand.Cards.First().Suit;
-
-            foreach (var card in hand.Cards)
-            {
-                if (card.Suit != suit)
-                    return false;
-            }
-
-            return true;
+            var counts = from c in hand.Cards
+                         group c by c.Suit into grp
+                         select grp.Count();
+            return counts.Any(count => count >= 5);
         }
 
         public static bool IsStraight(this Hand hand)
         {
-            if (hand.Count > 5)
-                return false;
 
             int handTotal = hand.Cards.Sum(card => Convert.ToInt32(card.Value));
 
-            if (handTotal == wheel)
+            if ((handTotal & wheel) == wheel || (handTotal & royalStraight) == royalStraight)
                 return true;
 
             string b_cards = Convert.ToString(handTotal, 2);
@@ -66,17 +60,23 @@ namespace FullHouse.Cards
             {
                 if(c == '1')
                 {
-                    foundOne |= true;
+                    foundOne = true;
                     count++;
                 }
                 else
                 {
                     if (foundOne && count < 5)
-                        return false;
+                    {
+                        foundOne = false;
+                        count = 0;
+                    }
                 }
+
+                if (count == 5)
+                    return true;
             }
 
-            return count == 5;
+            return count >= 5;
         }
 
         public static bool IsFourOfAKind(this Hand hand)

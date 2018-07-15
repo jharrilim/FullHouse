@@ -27,6 +27,7 @@ namespace FullHouse.Tests.Cards
         {
             new List<Card>
             {
+                new Card(Suit.Clubs, CardNumber.Two),
                 new Card(Suit.Clubs, CardNumber.Seven),
                 new Card(Suit.Clubs, CardNumber.Eight),
                 new Card(Suit.Clubs, CardNumber.Nine),
