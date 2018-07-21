@@ -25,7 +25,7 @@ namespace FullHouse.Cards
             | CardNumber.Five
         ));
 
-        public static bool IsRoyalFlush(List<Card> cards)
+        public static bool IsRoyalFlush(this List<Card> cards)
         {
             if (cards.Count <= 0)
                 return false;
@@ -34,9 +34,9 @@ namespace FullHouse.Cards
                 cards.Sum(card => Convert.ToInt32(card.Value)) == royalStraight;
         }
 
-        public static bool IsStraightFlush(List<Card> hand) => IsStraight(hand) && IsFlush(hand);
+        public static bool IsStraightFlush(this List<Card> hand) => IsStraight(hand) && IsFlush(hand);
 
-        public static bool IsFlush(List<Card> cards)
+        public static bool IsFlush(this List<Card> cards)
         {
             var counts = from c in cards
                          group c by c.Suit into grp
@@ -44,7 +44,7 @@ namespace FullHouse.Cards
             return counts.Any(count => count >= 5);
         }
 
-        public static bool IsStraight(List<Card> cards)
+        public static bool IsStraight(this List<Card> cards)
         {
 
             int handTotal = cards.Sum(card => Convert.ToInt32(card.Value));
@@ -79,7 +79,7 @@ namespace FullHouse.Cards
             return count >= 5;
         }
 
-        public static bool IsFourOfAKind(List<Card> cards)
+        public static bool IsFourOfAKind(this List<Card> cards)
         {
             var counts = from c in cards
                     group c by c.Value into grp
