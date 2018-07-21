@@ -79,19 +79,17 @@ namespace FullHouse.Cards
             return count >= 5;
         }
 
-        public static bool IsFourOfAKind(this List<Card> cards)
+        public static bool IsFourOfAKind(this List<Card> cards) => CountMatches(cards) == 4;
+
+        public static bool IsThreeOfAKind(this List<Card> cards) => CountMatches(cards) == 3;
+
+        public static bool IsPair(this List<Card> cards) => CountMatches(cards) == 2;
+
+        private static int CountMatches(List<Card> cards)
         {
-            var counts = from c in cards
-                    group c by c.Value into grp
-                    select grp.Count();
-
-            foreach (var count in counts)
-            {
-                if (count >= 4)
-                    return true;
-            }
-
-            return false;
+            return cards.GroupBy(c => c.Value)
+                .Select(grp => grp.Count())
+                .Max();
         }
     }
 }
