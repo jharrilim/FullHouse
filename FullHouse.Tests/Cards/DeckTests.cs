@@ -17,6 +17,7 @@ namespace FullHouse.Tests.Cards
         [Fact]
         public void Shuffle_ShouldGenerateRandom()
         {
+            // There is a 1 in 52! chance that this fails. Probably not happening.
             Deck deck = new Deck();
             var cards = deck.Cards;
             testOutputHelper.WriteLine("Before:\n");

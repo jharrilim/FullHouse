@@ -88,29 +88,22 @@ namespace FullHouse.Tests.Cards
         [Theory]
         [MemberData(nameof(RoyalFlush))]
         public void IsRoyalFlush_WithRoyalFlush_ShouldMatch(List<Card> cards)
-        {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-
-            Assert.True(hand.IsRoyalFlush());
+        {   
+            Assert.True(cards.IsRoyalFlush());
         }
 
         [Theory]
         [MemberData(nameof(MixedSuitsRoyalStraight))]
         public void IsRoyalFlush_WithNonMatchingSuits_ShouldReturnFalse(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.False(hand.IsRoyalFlush());
+            Assert.False(cards.IsRoyalFlush());
         }
 
         [Theory]
         [MemberData(nameof(MixedNumberFlush))]
         public void IsRoyalFlush_WithWrongNumbers_ShouldReturnFalse(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.False(hand.IsRoyalFlush());
+            Assert.False(cards.IsRoyalFlush());
         }
 
         [Theory]
@@ -118,18 +111,14 @@ namespace FullHouse.Tests.Cards
         [MemberData(nameof(StraightFlush))]
         public void IsStraightFlush_WithStraight_ShouldReturnTrue(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.True(hand.IsStraightFlush());
+            Assert.True(cards.IsStraightFlush());
         }
 
         [Theory]
         [MemberData(nameof(MixedNumberFlush))]
         public void IsStraightFlush_WithNonStraightData_ShouldReturnFalse(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.False(hand.IsStraightFlush());
+            Assert.False(cards.IsStraightFlush());
         }
 
         [Theory]
@@ -138,18 +127,14 @@ namespace FullHouse.Tests.Cards
         [MemberData(nameof(RoyalFlush))]
         public void IsStraight_WithStraightData_ShouldReturnTrue(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.True(hand.IsStraight());
+            Assert.True(cards.IsStraight());
         }
 
         [Theory]
         [MemberData(nameof(MixedNumberFlush))]
         public void IsStraight_WithNonStraightData_ShouldReturnFalse(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.False(hand.IsStraight());
+            Assert.False(cards.IsStraight());
         }
 
 
@@ -158,9 +143,7 @@ namespace FullHouse.Tests.Cards
         [MemberData(nameof(RoyalFlush))]
         public void IsFlush_WithFlushData_ShouldReturnTrue(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.True(hand.IsFlush());
+            Assert.True(cards.IsFlush());
         }
 
         [Theory]
@@ -168,18 +151,14 @@ namespace FullHouse.Tests.Cards
         [MemberData(nameof(MixedSuitsRoyalStraight))]
         public void IsFlush_WithNonFlushData_ShouldReturnFalse(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.False(hand.IsFlush());
+            Assert.False(cards.IsFlush());
         }
 
         [Theory]
         [MemberData(nameof(FourOfAKind))]
         public void IsFourOfAKind_WithFourOfAKind_ShouldReturnTrue(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.True(hand.IsFourOfAKind());
+            Assert.True(cards.IsFourOfAKind());
         }
 
         [Theory]
@@ -188,9 +167,7 @@ namespace FullHouse.Tests.Cards
         [MemberData(nameof(RoyalFlush))]
         public void IsFourOfAKind_WithNonFourOfAKindData_ShouldReturnFalse(List<Card> cards)
         {
-            Hand hand = new Hand();
-            hand.Cards.AddRange(cards);
-            Assert.False(hand.IsFourOfAKind());
+            Assert.False(cards.IsFourOfAKind());
         }
     }
 }
