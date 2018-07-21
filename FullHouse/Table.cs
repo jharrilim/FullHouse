@@ -9,8 +9,8 @@ namespace FullHouse
 {
     public class Table
     {
-        private Deck deck;
-        private List<Card> cardsOnTable;
+        private readonly Deck deck;
+        private readonly List<Card> cardsOnTable;
 
 
         // Closest thing to a ConcurrentHashSet. The byte is a meaningless dummy value.
@@ -59,7 +59,7 @@ namespace FullHouse
             }
         }
 
-        public void DealCard(Card card)
+        public void DealCard()
         {
             throw new NotImplementedException();
         }

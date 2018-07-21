@@ -9,8 +9,8 @@ namespace FullHouse.Players
 {
     public abstract class Player
     {
-        public bool IsDealer { get; set; } = false;
-        public bool IsCurrentPlayer { get; set; } = false;
+        public bool IsDealer { get; set; }
+        public bool IsCurrentPlayer { get; set; }
 
         public string Name { get; }
         public Hand Hand { get; }

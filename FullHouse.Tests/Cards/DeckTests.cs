@@ -12,7 +12,10 @@ namespace FullHouse.Tests.Cards
     {
         private readonly ITestOutputHelper testOutputHelper;
 
-        public DeckTests(ITestOutputHelper toh) => testOutputHelper = toh;
+        public DeckTests(ITestOutputHelper toh)
+        {
+            testOutputHelper = toh;
+        }
 
         [Fact]
         public void Shuffle_ShouldGenerateRandom()
