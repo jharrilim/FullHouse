@@ -12,9 +12,8 @@ namespace FullHouse
         private readonly Deck deck;
         private readonly List<Card> cardsOnTable;
 
-
         // Closest thing to a ConcurrentHashSet. The byte is a meaningless dummy value.
-        private ConcurrentDictionary<Player, byte> players;
+        private readonly ConcurrentDictionary<Player, byte> players;
 
         public int MaxSeats { get; }
 

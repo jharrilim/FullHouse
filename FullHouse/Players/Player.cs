@@ -21,7 +21,7 @@ namespace FullHouse.Players
         public event EventHandler EndTurn;
         public event EventHandler<CardPlayedEventArgs> CardPlayed;
 
-        public Player(string name)
+        protected Player(string name)
         {
             Name = name;
             Hand = new Hand();
